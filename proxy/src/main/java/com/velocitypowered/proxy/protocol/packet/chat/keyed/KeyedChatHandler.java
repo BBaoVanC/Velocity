@@ -106,10 +106,6 @@ public class KeyedChatHandler implements
     return pme -> {
       PlayerChatEvent.ChatResult chatResult = pme.getResult();
       if (!chatResult.isAllowed()) {
-        if (playerKey.getKeyRevision().noLessThan(IdentifiedKey.Revision.LINKED_V2)) {
-          // Bad, very bad.
-          invalidCancel(logger, player);
-        }
         return null;
       }
 
